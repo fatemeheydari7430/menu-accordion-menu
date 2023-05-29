@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>accordion menu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      .course-title {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        padding: 100px;
+        font-size: 34px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+      }
+      body {
+        background-color: #fcdc29;
+      }
+      .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .mainmenu{
+        width: 250px;
+        display: block;
+        border-radius: 10px;
+        overflow: hidden;
+        text-align: right;
+      }
+      .item{
+        border-top: 1px solid #ef584a;
+      }
+      .btn{
+        display: block;
+        padding: 15px 20px;
+        background-color: #ff6f61;
+        color: #fff;
+        position: relative;
+      }
+      .submenu{
+        background-color: #273057; 
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.7s ease-in-out;
+      }
+      .submenu a{
+        display: block;
+        padding: 15px 20px;
+        color: #fff;
+        font-size: 16px;
+        border-bottom: 1px solid #394c7f;
+        position: relative;
+      }
+      .submenu a::before{
+        content: '';
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .submenu a:hover::before{
+        content: '';
+        position: absolute;
+        height: 0;
+        width: 6px;
+        left: 0;
+        top: 0;
+        opacity: 1;
+        border-top: 24px solid transparent;
+        border-left: 11px solid #fcdc29;
+        border-bottom: 24px solid transparent;
+      }
+      .submenu a::after{
+        content: '';
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .submenu a:hover::after{
+        content: '';
+        position: absolute;
+        height: 0;
+        width: 6px;
+        right: 0;
+        top: 0;
+        opacity: 1;
+        border-top: 24px solid transparent;
+        border-right: 11px solid #fcdc29;
+        border-bottom: 24px solid transparent;
+      }
+    .submenu a:hover{
+      background: #273057;
+      background: linear-gradient(to bottom,#273057 0%,#273057 50%,#394c7f 51%,#394c7f 100%);
+    }
+    .item:target .submenu{
+      max-height: 200px;
+    }
+    </style>
+  </head>
+  <body>
+    <p class="course-title">accordion menu</p>
+    <div class="wrapper">
+      <ul class="mainmenu">
+
+        <li class="item" id="account">
+          <a href="#account" class="btn">دوره های آموزشی</a>
+          <div class="submenu">
+            <a href="#">طراحی وب</a>
+            <a href="#">برنامه نویسی</a>
+            <a href="#">جاوااسکریپت</a>
+          </div>
+        </li>
+
+        <li class="item" id="about">
+            <a href="#about" class="btn">تماس با ما</a>
+            <div class="submenu">
+              <a href="#">تلگرام</a>
+              <a href="#">اینستاگرام</a>
+            </div>   
+          </li>
+
+          <li class="item" id="support">
+            <a href="#support" class="btn">پشتیبانی</a>
+            <div class="submenu">
+                <a href="#">تلگرام</a>
+                <a href="#">اینستاگرام</a>
+                <a href="#">ایمیل</a>
+            </div>
+          </li>
+
+      </ul>
+    </div>
+  </body>
+</html> 
